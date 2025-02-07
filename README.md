@@ -31,7 +31,7 @@ Ensure you have access to administrative permissions within SharePoint.
 
 | Solution                     | Author(s)               |
 | ---------------------------- | ----------------------- |
-| SPD Admin Settings Extension | Your Name, Your Company |
+|    Admin Settings Extension  | Chipui Kasar |
 
 ## Version History
 
