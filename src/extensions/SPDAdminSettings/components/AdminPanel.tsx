@@ -11,6 +11,11 @@ import {
   IExtendedUserCustomActionInfo,
 } from "./IAdminPanelProps";
 import "@pnp/sp/user-custom-actions";
+import {
+  applyAllCustomCss,
+  parseProperties,
+  setFooterAlignment,
+} from "../utils/helper";
 
 export default function AdminPanel({ context, topString }: IAdminPanelProps) {
   const adminIconRef = useRef<HTMLDivElement | null>(null);
@@ -35,11 +40,7 @@ export default function AdminPanel({ context, topString }: IAdminPanelProps) {
 
   const handleBottomReached = useCallback(() => {
     setTimeout(() => {
-      document
-        .querySelectorAll('[data-automationid="SimpleFooter"]')
-        .forEach((section: HTMLElement) => {
-          section.style.justifyContent = alignment || "center";
-        });
+      setFooterAlignment(alignment);
     }, 1000);
   }, []);
 
@@ -100,7 +101,8 @@ export default function AdminPanel({ context, topString }: IAdminPanelProps) {
       const updatedProps = { ...existingProps, ...properties };
 
       if (!properties) {
-        applyCustomCss(updatedProps);
+        setDefaultValues(updatedProps);
+        applyAllCustomCss(updatedProps);
         return;
       }
 
@@ -117,33 +119,7 @@ export default function AdminPanel({ context, topString }: IAdminPanelProps) {
    * @param properties The ClientSideComponentProperties string to parse.
    * @returns The parsed custom CSS properties.
    */
-  const parseProperties = (
-    properties: string | undefined
-  ): ICustomCSSProperties => {
-    return properties ? JSON.parse(properties) : {};
-  };
 
-  const applyCustomCss = (properties: ICustomCSSProperties) => {
-    setDefaultValues(properties);
-
-    document
-      .querySelectorAll('[data-automation-id*="CanvasZone-SectionContainer"]')
-      .forEach((section: HTMLElement) => {
-        section.style.maxWidth = properties.fullWidth ? "100%" : "revert-layer";
-      });
-
-    document
-      .querySelectorAll('[data-automation-id="CanvasControl"]')
-      .forEach((container: HTMLElement) => {
-        container.style.margin = `${properties.spacing ?? 24}px 0`;
-      });
-
-    document
-      .querySelectorAll('[data-automationid="SimpleFooter"]')
-      .forEach((section: HTMLElement) => {
-        section.style.justifyContent = properties.alignment || "center";
-      });
-  };
   /**
    * Sets the default values for the custom CSS properties.
    * @param properties - The custom CSS properties to be set.
@@ -165,7 +141,9 @@ export default function AdminPanel({ context, topString }: IAdminPanelProps) {
       fullWidth: field === "fullWidth" ? value : fullWidth,
       spacing: field === "spacing" ? value : spacing,
     };
-    applyCustomCss(updatedSettings);
+
+    setDefaultValues(updatedSettings);
+    applyAllCustomCss(updatedSettings);
     handleUpdateCustomAction(updatedSettings);
   };
 
@@ -183,8 +161,14 @@ export default function AdminPanel({ context, topString }: IAdminPanelProps) {
         onDismiss={dismissPanel}
       >
         <div className={styles.container}>
-          <Link href={`${websiteURL}/SitePages/Admin-Page.aspx#${fromUrl}`}>
-            <Icon iconName="ContentSettings" /> Admin Page
+          <Link
+            href={`${websiteURL}/SitePages/Admin-Page.aspx#${fromUrl}`}
+            className={styles.items}
+            target="_blank"
+            data-interception="off"
+          >
+            <Icon iconName="ContentSettings" className={styles.icons} /> Admin
+            Page
           </Link>
 
           <Toggle
