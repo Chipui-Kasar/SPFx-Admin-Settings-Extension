@@ -1,0 +1,90 @@
+#adminIcon {
+  display: none;
+}
+/* hides sharepoint logo */
+/* #leftRegion {
+  display: none;
+} */
+/* search design */
+#sbcId {
+  border-radius: 50px !important;
+  background-color: #f0f1f2 !important;
+}
+#sbcId i {
+  color: "[theme: themePrimary]" !important;
+}
+/* a[data-interception^="propagate"] {
+  font-size: 18px !important;
+} */
+
+@media (max-width: 1023px) {
+  .frame {
+    display: none;
+  }
+}
+
+/* top navigation */
+/* #O365_TopMenu {
+  background-color: "[theme: themeSecondary]" !important;
+}
+/* .o365cs-base .o365sx-button {
+  background-color: "[theme: themeSecondary]" !important;
+  color: #fff !important;
+} */
+
+/* navigation color */
+/* #O365_NavHeader,
+#O365_TopMenu,
+.o365cs-base .o365sx-button {
+  background-color: "[theme: white]" !important;
+  color: #000 !important;
+} */
+#O365_NavHeader {
+  border-bottom: 2px solid #eee;
+}
+/* topnav search background color */
+
+/* footer background color and text color */
+div[class^="simpleFooterContainer-"] {
+  background-color: "[theme: themePrimary]" !important;
+
+  gap: 10px;
+}
+div[class^="simpleFooterItem-"] {
+  color: #fff;
+  font-weight: 400;
+}
+#FooterEditLink {
+  color: #fff !important;
+}
+div[data-automationid="SimpleFooter-edit"] {
+  position: absolute;
+  right: 15px;
+}
+div[class^="simpleFooterLinkSlots-"] {
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+/* div[class^="megaFooterLogo-"] {
+  position: relative;
+  left: 38%;
+} */
+
+/* underline the selected site */
+/* .is-selected {
+  border-color: "[theme: themeSecondary]" !important;
+}
+div[class^="linkSelected-"] {
+  border-color: "[theme: themeSecondary]" !important;
+} */
+a[href$="AdminRecycleBin.aspx"] {
+  display: none;
+}
+/* full width section  */
+
+@media (max-width: 1600px) {
+  div[data-automation-id*="CanvasZone-SectionContainer"] {
+    max-width: 100% !important;
+  }
+}

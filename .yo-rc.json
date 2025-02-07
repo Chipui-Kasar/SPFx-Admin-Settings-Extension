@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.18.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "spd-admin-settings",
+    "libraryId": "04d5e3fa-331c-4afb-b079-fdc05746766f",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spd-admin-settings",
+    "solutionShortDescription": "spd-admin-settings description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Admin-Settings",
+    "id": "04d5e3fa-331c-4afb-b079-fdc05746766f",
+    "version": "2.0.1.4",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "SharePoint Designs",
+      "websiteUrl": "https://www.sharepointdesigns.com/",
+      "privacyUrl": "https://www.sharepointdesigns.com/privacy-policy",
+      "termsOfUseUrl": "https://www.sharepointdesigns.com/privacy-policy",
+      "mpnId": "5405924"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "This extension is used to display the top navigation"
+      },
+      "longDescription": {
+        "default": "This extension is used to display the top navigation, allowing users to navigate to other pages within the intranet."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "f1eb3416-8cbb-46e7-a94b-320dec59baa5",
+        "version": "2.0.0.1",
+        "assets": {
+          "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spd-admin-settings.sppkg"
+  }
+}

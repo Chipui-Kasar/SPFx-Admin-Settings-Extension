@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://trimjourney.sharepoint.com/sites/DIY3",
+      "customActions": {
+        "708a1a6a-5d60-455d-b325-0defb4a30f3d": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message",
+            "fullWidth": true,
+            "spacing": 10,
+            "alignment": "center"
+          }
+        }
+      }
+    },
+    "SPDAdminSettings": {
+      "pageUrl": "https://trimjourney.sharepoint.com/sites/DIY3",
+      "customActions": {
+        "708a1a6a-5d60-455d-b325-0defb4a30f3d": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message",
+            "fullWidth": true,
+            "spacing": 10,
+            "alignment": "center"
+          }
+        }
+      }
+    }
+  }
+}

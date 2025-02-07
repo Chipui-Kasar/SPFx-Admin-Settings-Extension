@@ -1,0 +1,72 @@
+@import "src/index.css";
+.app {
+  // .top {
+  //   // color: #0098e6;
+  //   // position: absolute;
+  //   // top: -38px;
+  //   // z-index: 99;
+  //   // // left: 490px;
+  //   // right: 200px;
+  //   // position: absolute;
+  //   // top: -46px;
+  //   // left: 84%;
+  //   // z-index: 99;
+  //   // color: #0098e6;
+  //   // position: absolute;
+  //   // top: -36px;
+  //   // z-index: 99;
+  //   // right: 205px;
+  // }
+  margin-right: 7px;
+  .top .iconContainer {
+    display: flex;
+    // height: 48px;
+  }
+  .top .iconContainer .defaultIcon {
+    font-size: 20px;
+    display: inline-block;
+    pointer-events: auto;
+    cursor: pointer;
+    // filter: drop-shadow(1px 1px 1px black);
+    &:hover {
+      color: "[theme: themePrimary]";
+    }
+  }
+}
+//panel
+.container {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  .items {
+    display: flex;
+    align-items: center;
+    padding: 15px 0 15px 10px;
+    border: 1px solid rgb(172, 172, 172);
+    gap: 5px;
+    cursor: pointer;
+    color: "[theme: black]";
+    &:hover {
+      text-decoration: none;
+      background-color: "[theme: themePrimary]";
+      color: "[theme: white]";
+      .icons {
+        color: "[theme: white]";
+      }
+    }
+    .icons {
+      font-size: 18px;
+    }
+  }
+  .toggle,
+  .webpartSpacing {
+    width: 100%;
+    padding-top: 10px;
+  }
+  .footerAlignment {
+    width: 100%;
+  }
+}
